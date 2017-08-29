@@ -1,0 +1,7 @@
+<li>
+    <input type="checkbox" ng-model="ctrl.item.checked">
+    <span class="item-title" ng-class="{'completed': ctrl.item.checked}">{{ctrl.idx + 1}}. {{ctrl.item.title}}</span>
+    <button class="close-button" aria-label="Close alert" type="button" ng-click="ctrl.delete({item: ctrl.item})">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</li>

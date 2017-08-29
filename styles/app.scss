@@ -1,0 +1,39 @@
+@import "~foundation-sites/scss/foundation";
+
+@include foundation-everything(true);
+
+.padding10 {
+  padding: 10px;
+}
+
+.items {
+  list-style: none;
+  width: 100%;
+  @include margin(0, 0, 0, 0);
+
+  li {
+    border: 1px solid $alert-color;
+    @include position(relative);
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+
+    span.item-title {
+      color: $warning-color;
+
+      &.completed {
+        color: $light-gray;
+        font-style: italic;
+        text-decoration: line-through;
+      }
+    }
+
+    .close-button {
+      font-size: 1.5em;
+      top: 2px;
+      right: 8px;
+    }
+  }
+}

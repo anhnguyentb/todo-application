@@ -1,0 +1,28 @@
+<div class="grid-x padding10">
+    <div class="small-4 large-offset-4 cell">
+        <form ng-submit="ctrl.addItem()">
+            <div class="grid-x">
+                <div class="small-8 cell">
+                    <input type="text" placeholder="What needs to be done ?" ng-model="ctrl.itemTitle">
+                </div>
+                <div class="small-3 large-offset-1 cell">
+                    <a class="button expanded" href="#" ng-click="ctrl.addItem()">Add</a>
+                </div>
+            </div>
+        </form>
+        <div class="grid-x">
+            <ul class="items">
+                <todo-item ng-repeat="item in ctrl.items" item="item" idx="$index" delete="ctrl.deleteItem(item)" on-update="ctrl.itemChecked()"></todo-item>
+            </ul>
+        </div>
+
+        <div class="grid-x padding10">
+            <div class="cell">
+                <div class="expanded button-group">
+                    <a class="button" ng-click="ctrl.selectAll()">{{ctrl.allChecked ? 'Deselect All' : 'Select All'}}</a>
+                    <a class="button" ng-click="ctrl.deleteSelected()">Delete Selected</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
